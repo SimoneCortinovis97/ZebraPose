@@ -1,4 +1,4 @@
-#include <python3.6/Python.h>
+#include <python3.10/Python.h>
 #include <numpy/arrayobject.h>
 
 #include <eigen3/Eigen/Core>
@@ -185,7 +185,7 @@ render_save_current_framebuffer_wrapper(PyObject *self, PyObject *args)
 
     std::string img_save_path_string(img_save_path);
     //std::cout << img_save_path_string << std::endl;
-    //img_save_path_string = "/home/ysu/data/data_object_pose/BOP_dataset/lm/train_GT_images_visible/000031/000000_000002.png";
+    //img_save_path_string = "/home/simoc/data/data_object_pose/BOP_dataset/lm/train_GT_images_visible/000031/000000_000002.png";
     render->SaveImage(img_save_path_string);
 
 }

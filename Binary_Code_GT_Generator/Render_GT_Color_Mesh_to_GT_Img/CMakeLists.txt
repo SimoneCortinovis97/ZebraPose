@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 project(dataset_generator_coarse_to_fine)
 
 
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -g")
 
 #set glad 
 set(GLAD_DIR "render_related_source/glad")
@@ -25,7 +25,7 @@ find_package(assimp REQUIRED)
 include_directories(${ASSIMP_INCLUDE_DIRS})
 link_directories(${ASSIMP_LIBRARY_DIRS})
 ###################
-find_package( OpenCV 3.0 REQUIRED )
+find_package( OpenCV 4.0 REQUIRED )
 ###################
 
 add_library(opengl_render SHARED "render_related_source/opengl_render.cpp")

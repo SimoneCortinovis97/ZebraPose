@@ -1,0 +1,23 @@
+name: BinaryCodeGen
+channels:
+   - conda-forge
+dependencies:
+  - Opencv
+  - PCL==1.12.1
+  - eigen>=3.0.0
+  - glfw>=3.0.0
+  - assimp
+  - numpy
+  - imageio
+  - pypng
+  - pytz
+  - scipy
+#   - pyopengl
+  - tqdm
+  - conda-forge::mesa-libgl-devel-cos7-x86_64 # Silvio: issue comment https://github.com/icub-tech-iit/project-jl2-camozzi/issues/81#issuecomment-1968504664
+  - conda-forge::mesa-dri-drivers-cos7-x86_64 # Silvio
+  - conda-forge::libselinux-cos7-x86_64 # Silvio
+  - conda-forge::libxdamage-cos7-x86_64 # Silvio
+  - conda-forge::libxxf86vm-cos7-x86_64 # Silvio
+  - conda-forge::libxext-cos7-x86_64 # Silvio
+  - conda-forge::xorg-libxfixes # Silvio

@@ -6,10 +6,10 @@
 #include <eigen3/Eigen/Geometry>
 #include <eigen3/unsupported/Eigen/OpenGLSupport>
 
-#include <opencv2/core/core.hpp>
-#include <opencv2/imgcodecs.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv4/opencv2/core/core.hpp>
+#include <opencv4/opencv2/imgcodecs.hpp>
+#include <opencv4/opencv2/highgui/highgui.hpp>
+#include <opencv4/opencv2/imgproc/imgproc.hpp>
 
 #include "render_related_source/model.hpp"
 #include "render_related_source/shader.hpp"
