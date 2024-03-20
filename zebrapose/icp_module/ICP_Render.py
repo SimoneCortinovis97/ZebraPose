@@ -32,7 +32,7 @@ class ICP_Render:
 if __name__ == "__main__":
     # test the icp_render
     
-    mesh_path = '/home/simoc/data/data_object_pose/BOP_dataset/lmo/models/obj_000001.ply'
+    mesh_path = '$HOME/code/project-jl2-camozzi/zebra_pose/data/data_object_pose/BOP_dataset/lmo/models/obj_000001.ply'
     im_width = 640
     im_height = 480
     render = ICP_Render(mesh_path, im_width, im_height)
@@ -57,7 +57,7 @@ if __name__ == "__main__":
 
     end = time.time()
     
-    render.icp_render.render_GT_visible_side(t, R, 0, '/home/simoc/test_render_image.png')      
+    render.icp_render.render_GT_visible_side(t, R, 0, '$HOME/test_render_image.png')      
 
     print(end-start)
 '''

@@ -1,6 +1,6 @@
 #### training dataset
 bop_challange = True
-bop_path = /home/simoc/data/data_object_pose/BOP_dataset
+bop_path = $HOME/code/project-jl2-camozzi/zebra_pose/data/data_object_pose/BOP_dataset
 dataset_name = hb
 training_data_folder = train_pbr
 training_data_folder_2 = none
@@ -32,8 +32,8 @@ efficientnet_key = b4
 
 #### check points
 load_checkpoint=False
-check_point_path=/home/simoc/data/6dof_pose_experiments/experiments/hb/checkpoints/
-tensorboard_path=/home/simoc/data/6dof_pose_experiments/experiments/hb/tensorboard_logs/runs/
+check_point_path=$HOME/code/project-jl2-camozzi/zebra_pose/data/6dof_pose_experiments/experiments/hb/checkpoints/
+tensorboard_path=$HOME/code/project-jl2-camozzi/zebra_pose/data/6dof_pose_experiments/experiments/hb/tensorboard_logs/runs/
 ####
 
 
