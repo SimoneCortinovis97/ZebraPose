@@ -1,7 +1,7 @@
 #### training dataset
 ##for ycbv, bop_challange = False during the training
 bop_challange = True
-bop_path = $HOME/code/project-jl2-camozzi/zebra_pose/data/data_object_pose/BOP_dataset/
+bop_path = /home/simoc/data/data_object_pose/BOP_dataset/
 dataset_name = ycbv
 training_data_folder = train_real
 training_data_folder_2 = train_pbr
@@ -34,8 +34,8 @@ efficientnet_key = b4
 
 #### check points
 load_checkpoint=False
-check_point_path=$HOME/code/project-jl2-camozzi/zebra_pose/data/6dof_pose_experiments/experiments/checkpoints/
-tensorboard_path=$HOME/code/project-jl2-camozzi/zebra_pose/data/6dof_pose_experiments/experiments/tensorboard_logs/runs/
+check_point_path=/home/simoc/data/6dof_pose_experiments/experiments/checkpoints/
+tensorboard_path=/home/simoc/data/6dof_pose_experiments/experiments/tensorboard_logs/runs/
 ####
 
 

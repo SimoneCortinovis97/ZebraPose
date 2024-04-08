@@ -34,10 +34,14 @@ from test_network_with_test_data import test_network_with_single_obj
 
 def main(configs):
     config_file_name = configs['config_file_name']
+    print("config_file_name", config_file_name)
     #### training dataset
     bop_challange = configs['bop_challange']
+    print("bop_challange", bop_challange)
     bop_path = configs['bop_path']
+    print("bop_path", bop_path)
     obj_name = configs['obj_name']
+    print("obj_name", obj_name)
     dataset_name = configs['dataset_name']
     training_data_folder=configs['training_data_folder']
     training_data_folder_2=configs['training_data_folder_2']
@@ -57,6 +61,8 @@ def main(configs):
     predict_entire_mask=configs['predict_entire_mask']                  # if predict the entire object part rather than the visible one
     if 'efficientnet_key' in configs.keys():
         efficientnet_key = configs['efficientnet_key']
+    else: 
+        efficientnet_key=None
     #### check points
     load_checkpoint = configs['load_checkpoint']
     tensorboard_path = configs['tensorboard_path']
@@ -278,6 +284,8 @@ def main(configs):
 
             # test the trained CNN
             log_freq = 1000
+
+            print("----------------", (iteration_step)%log_freq)
 
             if (iteration_step)%log_freq == 0:
                 if binarycode_loss.histogram is not None:

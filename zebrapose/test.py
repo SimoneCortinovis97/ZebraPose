@@ -91,7 +91,9 @@ def main(configs):
     resnet_layer = configs['resnet_layer']                              # usually resnet 34
     concat=configs['concat_encoder_decoder']   
     if 'efficientnet_key' in configs.keys():
-        efficientnet_key = configs['efficientnet_key']                
+        efficientnet_key = configs['efficientnet_key']
+    else: 
+        efficientnet_key=None                
 
     #### augmentations
     Detection_reaults=configs['Detection_reaults']                       # for the test, the detected bounding box provided by GDR Net
@@ -171,6 +173,7 @@ def main(configs):
     has_gt = True
     if test_gts[obj_id][0] == None:
         has_gt = False
+    print("has_gt", has_gt)    
 
     if Detection_reaults != 'none':
         if configs['detector']=='FCOS':
@@ -308,7 +311,7 @@ def main(configs):
                 adx_error = Calculate_Pose_Error_Main(r_GT, t_GT, R_predict, t_predict, vertices)
                 if np.isnan(adx_error):
                     adx_error = 10000
-                    
+            print("adx_error", adx_error)        
             if adx_error < obj_diameter*0.1:
                 ADX_passed[batch_idx] = 1
 

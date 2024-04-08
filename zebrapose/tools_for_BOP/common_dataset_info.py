@@ -1,4 +1,9 @@
+## camozzi dataset
+camozzi_obj_name_obj_id = {
+    'obj_000001': 1}
 
+camozzi_symmetry_obj = {
+    'obj_000001': 1}
 
 ##### lm or lmo
 lmo_obj_name_obj_id = {
@@ -192,6 +197,6 @@ itodd_symmetry_obj = ['obj02', 'obj03', 'obj04', 'obj05', 'obj07', 'obj08', 'obj
 
 
 def get_obj_info(dataset_name):
-    if dataset_name not in ['lmo', 'ycbv', 'tless', 'tudl', 'hb', 'icbin', 'itodd']:
+    if dataset_name not in ['lmo', 'ycbv', 'tless', 'tudl', 'hb', 'icbin', 'itodd', 'camozzi']:
         raise AssertionError("dataset name unknow")
     return eval("{}_obj_name_obj_id".format(dataset_name)), eval("{}_symmetry_obj".format(dataset_name))

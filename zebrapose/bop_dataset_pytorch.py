@@ -15,6 +15,8 @@ import torchvision.transforms as transforms
 import GDR_Net_Augmentation
 from GDR_Net_Augmentation import get_affine_transform
 
+import time
+
 def crop_resize_by_warp_affine(img, center, scale, output_size, rot=0, interpolation=cv2.INTER_LINEAR):
     """
     output_size: int or (w, h)
@@ -66,7 +68,9 @@ def crop_square_resize(img, Bbox, crop_size=None, interpolation=None):
 
     roi_img[roi_y1:roi_y2, roi_x1:roi_x2] = img[y1:y2, x1:x2].copy()
     roi_img = cv2.resize(roi_img, (crop_size,crop_size), interpolation=interpolation)
+    # print("--------", roi_img)
     return roi_img
+    
 
 def crop_resize(img, Bbox, crop_size=None, interpolation=None):
     x1 = max(0, Bbox[0])

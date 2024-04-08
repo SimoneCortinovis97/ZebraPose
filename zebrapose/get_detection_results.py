@@ -5,14 +5,18 @@ def get_detection_results(detection_results_file, rgb_fns, obj_id, score_thr):
     with open(detection_results_file) as jsonFile:
         detections = json.load(jsonFile)
         jsonFile.close()
-    
     Bbox = [None for x in range(len(rgb_fns))]
     for counter, rgb_fn in enumerate(rgb_fns):
         #rgb_files    ...datasetpath/train/scene_id/rgb/img.png
         rgb_fn = rgb_fn.split("/")
+        # print(rgb_fn)
         scene_id = int(rgb_fn[-3])
         img_id = int(rgb_fn[-1][:-4])
+        # print("scene_id", scene_id)
+        # print("img_id", img_id)
         detection_result_key = "{}/{}".format(scene_id,img_id)
+
+        # print(detection_result_key)
 
         detection = detections[detection_result_key]
         best_det_score = 0
