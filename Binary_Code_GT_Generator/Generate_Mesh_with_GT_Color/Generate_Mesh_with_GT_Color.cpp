@@ -277,7 +277,7 @@ void result_visulization(const HierarchyPointIndices &hierarchy_indices, const p
                 }
             }
         }
-        std::string file_for_visulize ("$HOME/project/coarse_to_fine_pose/visulize/itration");
+        std::string file_for_visulize ("$CAMOZZI_DIR_PATH/zebra_pose/project/coarse_to_fine_pose/visulize/itration");
         file_for_visulize += std::to_string(i);
         file_for_visulize += ".ply";
 

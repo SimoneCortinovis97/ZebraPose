@@ -12,9 +12,14 @@ import numpy as np
 from tqdm import tqdm
 
 def generate_GT_images(bop_path, dataset_name, force_rewrite, is_training_data, data_folder, start_obj_id, end_obj_id):
+
+        
+    print("getting bop dataset ")
     dataset_dir,source_dir,model_plys,model_info,model_ids,rgb_files,depth_files,mask_files,mask_visib_files,gts,gt_infos,cam_param_global,scene_cam = bop_io.get_dataset(bop_path,dataset_name,train=is_training_data, incl_param=True, data_folder=data_folder)
 
     target_dir = os.path.join(dataset_dir,data_folder + '_GT')
+
+    print(target_dir)
 
     im_width,im_height =cam_param_global['im_size'] 
     if dataset_name == 'tless':
@@ -24,17 +29,26 @@ def generate_GT_images(bop_path, dataset_name, force_rewrite, is_training_data, 
             im_width = 400
             im_height = 400
 
+    print("setting camera params ")
+
     cam_K = cam_param_global['K']
     camera_parameters = np.array([im_width, im_height, cam_K[0,0], cam_K[1,1], cam_K[0,2], cam_K[1,2]])
     print(camera_parameters)
     Render.init(camera_parameters, 1)
     model_scale = 0.1
+
+    print("starting for ")
+
+    print(range(start_obj_id, end_obj_id))
     
     for model_to_render in range(start_obj_id, end_obj_id):
         # only bind 1 model each time
         model_to_render = int(model_to_render)
         ply_fn = dataset_dir+"/models_GT_color/obj_{:06d}.ply".format(int(model_ids[model_to_render]))
         print("bind ", ply_fn, " to the render buffer position", 0)
+
+
+        print("calling bind_3D_model ")
         Render.bind_3D_model(ply_fn, 0, model_scale)
 
         print("rgb_files:", len(rgb_files))
@@ -59,8 +73,7 @@ def generate_GT_images(bop_path, dataset_name, force_rewrite, is_training_data, 
             
             #visible side
             for count, gt in enumerate(gts[img_id]):
-                GT_img_fn = os.path.join(GT_img_dir,"{}_{:06d}.png".format(image_name,count))         
-               
+                GT_img_fn = os.path.join(GT_img_dir,"{}_{:06d}.png".format(image_name,count)) 
                 obj_id_render = int(gt['obj_id']-1)
                 if obj_id_render != model_to_render:
                     continue        
