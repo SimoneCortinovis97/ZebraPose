@@ -36,7 +36,7 @@ opengl_render::opengl_render(const unsigned int &IMG_WIDTH_, const unsigned int 
     }
 
     //complie the shader
-    std::string base_path("$HOME/code/project-jl2-camozzi/zebra_pose/ZebraPose/Binary_Code_GT_Generator/Render_GT_Color_Mesh_to_GT_Img/render_related_source/");
+    std::string base_path("$CAMOZZI_DIR_PATH/zebra_pose/ZebraPose/Binary_Code_GT_Generator/Render_GT_Color_Mesh_to_GT_Img/render_related_source/");
 
     std::string vs_groundtruth_path = base_path + "shader_groundtruth.vs";
     std::string fs_groundtruth_path = base_path + "shader_groundtruth.fs";

@@ -228,7 +228,7 @@ void Divide_PointCloud_Itrativ(const pcl::PointCloud<pcl::PointXYZ> &input_point
 
 void result_visulization(const HierarchyPointIndices &hierarchy_indices, const pcl::PointCloud<pcl::PointXYZ> &input_pointcloud)
 {
-    cv::Mat colorbar = cv::imread("$HOME/code/project-jl2-camozzi/zebra_pose/data/colorbar_rgbr.png");  
+    cv::Mat colorbar = cv::imread("$CAMOZZI_DIR_PATH/zebra_pose/data/colorbar_rgbr.png");  
     int colorbar_length = colorbar.size[1];
 
     std::vector <pcl::PointCloud<pcl::PointXYZRGB>> colored_pointclouds;  //1 colored_pointcloud for every hierarchy layer

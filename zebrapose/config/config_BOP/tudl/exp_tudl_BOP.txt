@@ -1,6 +1,6 @@
 #### training dataset
 bop_challange = True
-bop_path = /home/simoc/data/data_object_pose/Remote_BOP
+bop_path = $CAMOZZI_DIR_PATH/zebra_pose/data/data_object_pose
 dataset_name = tudl
 training_data_folder = train_real
 training_data_folder_2 = train_pbr
@@ -31,8 +31,8 @@ concat_encoder_decoder = True
 
 #### check points
 load_checkpoint=False
-check_point_path=/home/simoc/data/6dof_pose_experiments/experiments/checkpoints/
-tensorboard_path=/home/simoc/data/6dof_pose_experiments/experiments/tensorboard_logs/runs/
+check_point_path=$CAMOZZI_DIR_PATH/zebra_pose/data/6dof_pose_experiments/experiments/checkpoints/
+tensorboard_path=$CAMOZZI_DIR_PATH/zebra_pose/data/6dof_pose_experiments/experiments/tensorboard_logs/runs/
 ####
 
 

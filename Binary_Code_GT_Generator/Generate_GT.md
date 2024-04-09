@@ -92,7 +92,7 @@ Or directly use the `models` from this [`link`](https://cloud.dfki.de/owncloud/i
 
 - cd to `/Binary_Code_GT_Generator`
 - use `generate_mesh_with_GT_color_for_BOP.py`, e.g.  
-`python3 generate_mesh_with_GT_color_for_BOP.py $HOME/code/project-jl2-camozzi/zebra_pose/data/data_object_pose/BOP_dataset/ lm 2 16 $HOME/project/Coarse_to_Fine_6DoF_Pose/Binary_Code_GT_Generator/Generate_Mesh_with_GT_Color/build/Generate_Mesh_with_GT_Color`.   
+`python3 generate_mesh_with_GT_color_for_BOP.py $CAMOZZI_DIR_PATH/zebra_pose/data/data_object_pose/BOP_dataset/ lm 2 16 $HOME/project/Coarse_to_Fine_6DoF_Pose/Binary_Code_GT_Generator/Generate_Mesh_with_GT_Color/build/Generate_Mesh_with_GT_Color`.   
 The 5 args should be:  
 1\) path to bop folder  
 2\) the dataset name, e.g. `lmo`  
@@ -106,7 +106,7 @@ This scipt will create a folder "models_GT_color" under the dataset folder, and 
 
 All the preparations are done, this is the only thing that we need for the training.  
 
-use `generate_training_labels_for_BOP.py`, e.g. `python3 generate_training_labels_for_BOP.py --bop_path $HOME/code/project-jl2-camozzi/zebra_pose/data/data_object_pose/BOP_dataset/ --dataset_name lmo --force_rewrite True --is_training_data True --data_folder train_real --start_obj_id 0 --end_obj_id 3`
+use `generate_training_labels_for_BOP.py`, e.g. `python3 generate_training_labels_for_BOP.py --bop_path $CAMOZZI_DIR_PATH/zebra_pose/data/data_object_pose/BOP_dataset/ --dataset_name lmo --force_rewrite True --is_training_data True --data_folder train_real --start_obj_id 0 --end_obj_id 3`
 
 To be able to use symmetry aware training, use use `generate_training_labels_for_BOP_v2.py` to generate the required ground truth.
 
